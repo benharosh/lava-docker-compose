@@ -45,18 +45,12 @@ services:
   dispatcher:
     image: lavasoftware/lava-dispatcher:2019.03
     container_name: lava_dispatcher
-    devices:
-      - /dev/kvm # needed for QEMU
-      - /dev/net/tun # needed for QEMU
     cap_add:
       - NET_ADMIN # needed for QEMU
     environment:
       - "DISPATCHER_HOSTNAME=--hostname=dispatcher"
       - "LOGGER_URL=tcp://server:5555" # url to send logs
       - "MASTER_URL=tcp://server:5556" # url of lava master
-    volumes:
-      - '/boot:/boot:ro'
-      - '/lib/modules:/lib/modules:ro'
 
 volumes:
   # postgres data volume
