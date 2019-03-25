@@ -55,12 +55,12 @@ services:
 volumes:
   # postgres data volume
   pgdata:
-    name: lava-server-pgdata
+  # name: lava-server-pgdata
 
   # squid cache volume
   squid:
-    name: lava-squid-cache
+  #  name: lava-squid-cache
 
   # lava-server job artifact volume
   joboutput:
-    name: lava-server-job-output
+  #  name: lava-server-job-output
